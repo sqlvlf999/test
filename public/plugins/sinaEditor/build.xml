@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<project default="build" basedir=".">
+	<property name="src.dir"  value="se"/>
+	<property name="target.name"  value="sinaeditor.js"/>
+	
+	<target name="build" depends="clean">
+		<concat destfile="${target.name}" encoding="UTF-8"  outputencoding="UTF-8" append="true">
+			<!-- 初始化需要公共使用的资源 -->
+			<fileset dir="${src.dir}/core/init/" includes="*.js"/>
+			
+			<fileset dir="${src.dir}/core/init/util/" includes="*.js"/>
+			<fileset dir="${src.dir}/core/init/util/dom/" includes="*.js"/>
+			<fileset dir="${src.dir}/core/init/range/" includes="*.js"/>
+			<!-- 初始化事件资源 -->
+			<fileset file="${src.dir}/customevent/*.js" />
+			<!-- 初始化抽象类资源 -->
+			<fileset file="${src.dir}/core/abstract/base/*.js" />
+			<fileset file="${src.dir}/core/abstract/*.js" />
+			<!-- 初始化插件资源 -->
+			<!--<fileset file="${src.dir}/plugins/*.js" />-->
+			<fileset dir="${src.dir}">
+				<include name="plugins/**/*.js" />
+			</fileset>
+			<!-- 初始化实例类  -->
+			<fileset file="${src.dir}/core/abstract/baseEditor.js" />
+			
+			
+			<!-- 弹出的浮层 -->
+			<fileset file="${src.dir}/core/_enty/*.js" />
+			<fileset file="${src.dir}/core/_enty/editor/normalEditor.js" />
+			<fileset file="${src.dir}/core/_enty/dialog/renderer/*.js" />
+			<fileset file="${src.dir}/core/_enty/dialog/dragger/*.js" />
+			<fileset file="${src.dir}/core/_enty/dialog/parent/*.js" />
+			<fileset file="${src.dir}/core/_enty/dialog/*.js" />
+			<fileset file="${src.dir}/core/_enty/dialog/config/moduleDialog.js" />
+			<fileset file="${src.dir}/core/_enty/dialog/config/dialogConfig.js" />
+		</concat>
+	</target>
+	
+	<target name="clean">
+		<delete includeEmptyDirs="false">
+			<fileset file="${target.name}"/>
+		</delete>
+	</target>
+</project>

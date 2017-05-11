@@ -1,0 +1,74 @@
+<% content_for :header do %>
+<p class="code" style="display:none"><%=session[:code]%></p>
+  <section class="content-header">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb" style="font-size:medium;">
+          <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li>
+          <li class="active">烤房管理</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<% content_for :content do %>
+  <section class="content" style="margin-top:-25px;" >
+    <div class="row row1" style="margin-top:150px;">
+      <div class="col-md-12">
+        <div class="box box-widget">
+          <div class="box-body line">
+            <div class="row">
+
+              <div class="col-xs-2"  style="margin-top:10px;"><input type="text" placeholder="addresses" class="form-control" id="addresses"></div>
+              
+              <div class="col-xs-2" style="margin-top:10px;">
+                <div class="form-group">
+                  <select class="form-control" id="stations">
+                    
+                  </select>
+                </div>
+              </div>
+              <div class="col-xs-3"  style="margin-top:10px;">
+                  <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">开始日期</div>
+                        <input type="text" name="protocolStartDate" id="protocolStartDate" class="form-control">
+                    </div>
+                  </div> 
+              </div>              
+              <div class="col-xs-3"  style="margin-top:10px;">
+                  <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon">结束日期</div>
+                        <input type="text" name="protocolEndDate" id="protocolEndDate" class="form-control">
+                    </div>
+                  </div> 
+              </div>
+              <div class="col-xs-2"  style="margin-top:10px;"><button class="btn btn-primary" type="button" id="search_btn">搜索</button></div>
+            </div>
+
+            <div class="row date-info" >
+              
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div id="searchModal" class="modal modal-primary fade in">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+           <div class="box-body">
+              <p style="height:25px;width:100%;margin:0 auto;">正在获取数据，请稍后...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

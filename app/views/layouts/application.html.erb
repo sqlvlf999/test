@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>烟草烘烤 | 管理系统</title>
+    <%= csrf_meta_tags %>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    
+    <meta http-equiv="Expires" CONTENT="0">  
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">  
+    <meta http-equiv="Pragma" CONTENT="no-cache"> 
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="/plugins/datepicker/datepicker3.css" rel="stylesheet">
+    <link rel="stylesheet" href="/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="stylesheet" href="/plugins/datatables/jquery.dataTables.css">
+    <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/js/laydate/need/laydate.css">
+    <link rel="stylesheet" href="/js/laydate/skins/default/laydate.css">
+    <style>
+      table tbody .tr_select{
+        background-color: #abb9d3;
+      }
+    </style>
+  </head>
+  <body class="skin-blue sidebar-mini">
+        <div class="wrapper">
+      <header class="main-header">
+        <a href="/dashboard" class="logo">
+          <span class="logo-mini"><b>管理</b></span>
+          <span class="logo-lg"><b>烟草烘烤</b>管理系统</span>
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- <li class="dropdown messages-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="label label-success">4</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">You have 4 messages</li>
+                  <li>
+                    inner menu: contains the actual data
+                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;">
+                    <ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                      <li>start message
+                        <a href="#">
+                          <div class="pull-left">
+                            <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                          </div>
+                          <h4>
+                            Support Team
+                            <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li>end message
+                      <li>
+                        <a href="#">
+                          <div class="pull-left">
+                            <img src="/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                          </div>
+                          <h4>
+                            AdminLTE Design Team
+                            <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="pull-left">
+                            <img src="/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                          </div>
+                          <h4>
+                            Developers
+                            <small><i class="fa fa-clock-o"></i> Today</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="pull-left">
+                            <img src="/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                          </div>
+                          <h4>
+                            Sales Department
+                            <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div class="pull-left">
+                            <img src="/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                          </div>
+                          <h4>
+                            Reviewers
+                            <small><i class="fa fa-clock-o"></i> 2 days</small>
+                          </h4>
+                          <p>Why not buy a new awesome theme?</p>
+                        </a>
+                      </li>
+                    </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+                  </li>
+                  <li class="footer"><a href="#">See All Messages</a></li>
+                </ul>
+              </li> -->
+              <!-- Notifications: style can be found in dropdown.less -->
+              <!-- <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-bell-o"></i>
+                  <span class="label label-warning">10</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">You have 10 notifications</li>
+                  <li>
+                    inner menu: contains the actual data
+                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the page and may cause design problems
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-users text-red"></i> 5 new members joined
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-user text-red"></i> You changed your username
+                        </a>
+                      </li>
+                    </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+                  </li>
+                  <li class="footer"><a href="#">View all</a></li>
+                </ul>
+              </li>
+              Tasks: style can be found in dropdown.less
+              <li class="dropdown tasks-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="fa fa-flag-o"></i>
+                  <span class="label label-danger">9</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="header">You have 9 tasks</li>
+                  <li>
+                    inner menu: contains the actual data
+                    <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 200px;"><ul class="menu" style="overflow: hidden; width: 100%; height: 200px;">
+                      <li>Task item
+                        <a href="#">
+                          <h3>
+                            Design some buttons
+                            <small class="pull-right">20%</small>
+                          </h3>
+                          <div class="progress xs">
+                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only">20% Complete</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li>end task item
+                      <li>Task item
+                        <a href="#">
+                          <h3>
+                            Create a nice theme
+                            <small class="pull-right">40%</small>
+                          </h3>
+                          <div class="progress xs">
+                            <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only">40% Complete</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li>end task item
+                      <li>Task item
+                        <a href="#">
+                          <h3>
+                            Some task I need to do
+                            <small class="pull-right">60%</small>
+                          </h3>
+                          <div class="progress xs">
+                            <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only">60% Complete</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <h3>
+                            Make beautiful transitions
+                            <small class="pull-right">80%</small>
+                          </h3>
+                          <div class="progress xs">
+                            <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                              <span class="sr-only">80% Complete</span>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    </ul><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; background: rgb(0, 0, 0);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div>
+                  </li>
+                  <li class="footer">
+                    <a href="#">View all tasks</a>
+                  </li>
+                </ul>
+              </li> -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <span class="hidden-xs"><%= session[:hospital_title] %></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="user-header">
+                    <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <p>
+                      Alexander Pierce - Web Developer
+                      <small>Member since Nov. 2012</small>
+                    </p>
+                  </li>
+                  <li class="user-body">
+                    <div class="col-xs-4 text-center">
+                     
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      
+                    </div>
+                    <div class="col-xs-4 text-center">
+                     
+                    </div>
+                  </li>
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <aside class="main-sidebar">
+        <section class="sidebar">
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            </div>
+            <div class="pull-left info">
+              <p><%= session[:jail_title] %></p>
+              <a href="#"><i class="fa fa-circle text-success"></i>在线</a>
+            </div>
+          </div>
+          <!-- <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+              <input id="search" type="text" name="q" class="form-control" placeholder="搜索...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form> -->
+          <ul class="sidebar-menu">
+            <li class="header">导航</li>
+
+            <!-- <li class="treeview">
+              <a href="/cities">
+                <i class="fa fa-hand-stop-o"></i><span>cities</span>
+              </a>
+            </li> -->
+
+            <!-- <li class="treeview">
+              <a href="/companies">
+                <i class="fa fa-hand-stop-o"></i><span>companies</span>
+              </a>
+            </li> -->
+
+            <!-- <li class="treeview">
+              <a href="/contract_changes">
+                <i class="fa fa-hand-stop-o"></i><span>contract_changes</span>
+              </a>
+            </li> -->
+
+            <li class="treeview">
+              <a href="/fresh">
+                <i class="fa fa-leaf"></i><span>鲜烟管理</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu fresh">
+                <li class="test_li">
+                  <a href="/fresh">
+                    <i class="fa fa-circle-o test_circle fresh_all_analysis"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a href="/dry">
+                <i class="fa fa-fire"></i><span>干烟管理</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu dry">
+                <li class="test_li">
+                  <a href="/dry">
+                    <i class="fa fa-circle-o test_circle dry_all_analysis"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+			
+			      <li class="treeview">
+              <a href="/rooms">
+                <i class="fa fa-home"></i><span>烤房过程管理</span>
+              </a>
+            </li>
+
+            <li class="treeview">
+              <a href="/packings">
+                <i class="fa fa-inbox"></i><span>编装烟管理</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu packing">
+                <li class="test_li">
+                  <a href="/packings">
+                    <i class="fa fa-circle-o test_circle packing_all_analysis"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- <li class="treeview">
+              <a href="/stations">
+                <i class="fa fa-hand-stop-o"></i><span>stations</span>
+              </a>
+            </li> -->
+
+            <!-- <li class="treeview">
+              <a href="/users">
+                <i class="fa fa-hand-stop-o"></i><span>users</span>
+              </a>
+            </li> -->
+
+            <!-- <li class="treeview">
+              <a href="/party_as">
+                <i class="fa fa-hand-stop-o"></i><span>party_as</span>
+              </a>
+            </li> -->
+
+            <!-- <li class="treeview">
+              <a href="/party_bs">
+                <i class="fa fa-hand-stop-o"></i><span>party_bs</span>
+              </a>
+            </li> -->
+          
+          </ul>
+        </section>
+      </aside>
+
+  <div class="content-wrapper" style="min-height: 557px;">
+    
+    <%= yield :header %>
+   
+    <%= yield :content %>
+
+  </div>
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>版本</b> 1.0.0
+        </div>
+        <strong>Copyright © 2014-2015 <a href="http://almsaeedstudio.com">瑞和科技</a></strong> 版权所有.
+      </footer>
+    </div>
+
+    <!-- <div id="searchModal" class="modal modal-primary fade in">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <h3 class="modal-title">搜索</h3>
+          </div>
+          <div class="modal-body">
+           <div class="box-body">
+              <p style="height:25px;width:50%;margin:0 auto;">请选择日期搜索:</p>
+              <div style="color:gray;height:25px;width:50%;margin:0 auto;"><input style="width:100%"  id="reservation" class="laydate-icon" onclick="laydate()"></div>
+              <div class="statistic_content">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-outline pull-left" type="button">关闭</button>
+            <button class="btn btn-outline statistic" type="button">搜索</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="/plugins/fastclick/fastclick.min.js"></script>
+    <script src="/dist/js/app.min.js"></script>
+    <script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="/plugins/canvasjs-1.8.0/canvasjs.min.js"></script>
+    <script src="/plugins/knob/jquery.knob.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/js/highcharts.js"></script>
+    <script>
+      $(function(){
+        var code = $(".code").text();
+        console.log("权限:"+code);
+        if(code.length == 6){
+            $(".fresh_all_analysis").html("&nbsp;&nbsp;全工厂鲜烟数据统计")
+            $(".dry_all_analysis").html("&nbsp;&nbsp;全工厂干烟数据统计")
+            $(".packing_all_analysis").html("&nbsp;&nbsp;全工厂装烟数据统计")
+        }else if(code.length == 4){
+            $(".fresh_all_analysis").html("&nbsp;&nbsp;全市鲜烟数据统计")
+            $(".dry_all_analysis").html("&nbsp;&nbsp;全市干烟数据统计")
+            $(".packing_all_analysis").html("&nbsp;&nbsp;全市装烟数据统计")
+        }else if(code.length == 2){
+            $(".fresh_all_analysis").html("&nbsp;&nbsp;全省鲜烟数据统计")
+            $(".dry_all_analysis").html("&nbsp;&nbsp;全省干烟数据统计")
+            $(".packing_all_analysis").html("&nbsp;&nbsp;全省装烟数据统计")
+        }
+        $.ajax({
+          type:"get",
+          url:"/getlist",
+          dataType:'json',
+          success:function(data){
+            treeView(data);
+            var a_s = $('a');
+            for(var i=0;i<a_s.length;i++){
+              $(a_s[i]).attr({href:$(a_s[i]).attr('href')+"?randomId="+ new Date()});
+            }
+          }
+        })
+      })
+      function treeView(data){
+
+        if(data.counties && data.stations && !data.cities){
+            for(var i=0;i<data.counties.length;i++){
+              $(".fresh").append('<li class="'+data.counties[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.counties[i].title+'</a></li>');
+              $(".dry").append('<li class="'+data.counties[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.counties[i].title+'</a></li>');
+              $(".packing").append('<li class="'+data.counties[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.counties[i].title+'</a></li>');
+            }
+            for(var i=0;i<data.counties.length;i++){
+              for(var j=0;j<data.stations.length;j++){
+                //console.log(data.stations[j].code.substr(0,6));
+                if(data.stations[j].code.substr(0,6) == data.counties[i].code){
+                  if(!$("."+data.counties[i].code).find("ul").hasClass("add")){
+                    $("."+data.counties[i].code).append('<ul class="treeview-menu add">'+
+                                                        '<li class="'+data.counties[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.counties[i].title+'数据统计</a></li>'+
+                                                        '<li class="'+data.stations[j].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.stations[j].title+'</a></li></ul>')
+                  }else{
+                    $("."+data.counties[i].code).find("ul").append('<li class="'+data.stations[j].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.stations[j].title+'</a></li>')
+                  }
+                }
+                  
+              }
+            }
+
+            for(var i=0;i<data.counties.length;i++){
+                $(".fresh").find("."+data.counties[i].code).find("a").attr({href:"/fresh_detail/"+data.counties[i].code});
+                $(".dry").find("."+data.counties[i].code).find("a").attr({href:"/dry_detail/"+data.counties[i].code});
+                $(".packing").find("."+data.counties[i].code).find("a").attr({href:"/packing_detail/"+data.counties[i].code});
+            }
+            for(var i=0;i<data.stations.length;i++){
+                $(".fresh").find("."+data.stations[i].code).find("a").attr({href:"/fresh_detail/"+data.stations[i].code});
+                $(".dry").find("."+data.stations[i].code).find("a").attr({href:"/dry_detail/"+data.stations[i].code});
+                $(".packing").find("."+data.stations[i].code).find("a").attr({href:"/packing_detail/"+data.stations[i].code});
+            }
+        }else if(data.counties && data.stations && data.cities){
+            for(var i=0;i<data.cities.length;i++){
+              $(".fresh").append('<li class="'+data.cities[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.cities[i].title+'</a></li>');
+              $(".dry").append('<li class="'+data.cities[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.cities[i].title+'</a></li>');
+              $(".packing").append('<li class="'+data.cities[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.cities[i].title+'</a></li>');
+            }
+            for(var i=0;i<data.cities.length;i++){
+                for(var j=0;j<data.counties.length;j++){
+                  if(data.counties[j].code.substr(0,4) == data.cities[i].code){
+                    if(!$("."+data.cities[i].code).find("ul").hasClass("add")){
+                      $("."+data.cities[i].code).append('<ul class="treeview-menu add">'+
+                                                        '<li class="'+data.cities[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.cities[i].title+'数据统计</a></li>'+
+                                                        '<li class="'+data.counties[j].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.counties[j].title+'</a></li></ul>')
+                    }else{
+                      $("."+data.cities[i].code).find("ul").append('<li class="'+data.counties[j].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.counties[j].title+'</a></li>')
+                    }
+                  }
+                    
+                }
+            }
+            for(var i=0;i<data.counties.length;i++){
+                for(var j=0;j<data.stations.length;j++){
+                    //console.log(data.stations[j].code.substr(0,6));
+                    if(data.stations[j].code.substr(0,6) == data.counties[i].code){
+                        if(!$("."+data.counties[i].code).find("ul").hasClass("add")){
+                            $("."+data.counties[i].code).append('<ul class="treeview-menu add">'+
+                                                                '<li class="'+data.counties[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.counties[i].title+'数据统计</a></li>'+
+                                                                '<li class="'+data.stations[j].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.stations[j].title+'</a></li></ul>')
+                        }else{
+                            $("."+data.counties[i].code).find("ul").append('<li class="'+data.stations[j].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.stations[j].title+'</a></li>')
+                        }
+                    }
+                    
+                }
+            }
+
+            for(var i=0;i<data.cities.length;i++){
+                $(".fresh").find("."+data.cities[i].code).find("a").attr({href:"/fresh_detail/"+data.cities[i].code});
+                $(".dry").find("."+data.cities[i].code).find("a").attr({href:"/dry_detail/"+data.cities[i].code});
+                $(".packing").find("."+data.cities[i].code).find("a").attr({href:"/packing_detail/"+data.cities[i].code});
+            }
+            for(var i=0;i<data.counties.length;i++){
+                $(".fresh").find("."+data.counties[i].code).find("a").attr({href:"/fresh_detail/"+data.counties[i].code});
+                $(".dry").find("."+data.counties[i].code).find("a").attr({href:"/dry_detail/"+data.counties[i].code});
+                $(".packing").find("."+data.counties[i].code).find("a").attr({href:"/packing_detail/"+data.counties[i].code});
+            }
+            for(var i=0;i<data.stations.length;i++){
+                $(".fresh").find("."+data.stations[i].code).find("a").attr({href:"/fresh_detail/"+data.stations[i].code});
+                $(".dry").find("."+data.stations[i].code).find("a").attr({href:"/dry_detail/"+data.stations[i].code});
+                $(".packing").find("."+data.stations[i].code).find("a").attr({href:"/packing_detail/"+data.stations[i].code});
+            }
+        }else if(!data.counties && data.stations && !data.cities){
+            for(var i=0;i<data.stations.length;i++){
+                $(".fresh").append('<li class="'+data.stations[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.stations[i].title+'</a></li>');
+                $(".dry").append('<li class="'+data.stations[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.stations[i].title+'</a></li>');
+                $(".packing").append('<li class="'+data.stations[i].code+'"><a href="/dry"><i class="fa fa-circle-o test_circle dry_all_analysis"></i>'+data.stations[i].title+'</a></li>');
+            }
+        }
+    }
+    </script>
+    <%= javascript_include_tag params[:controller]%>
+    <div class="jvectormap-label" style="display: none; left: 411px; top: 703px;"></div>
+     
+</body>
+</html>

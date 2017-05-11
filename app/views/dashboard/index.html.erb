@@ -1,0 +1,170 @@
+<% content_for :header do %>
+<p class="code" style="display:none"><%=session[:code]%></p>
+  <section class="content-header">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb" style="font-size:medium;background-color:#FBE0B3">
+          <li style="color:red;"><span class="name" style="color:red;" href="/dashboard">  </span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<% content_for :content do %>
+  <section class="content" style="margin-top:-25px;" >
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3 id="used_room">150</h3>
+              <p>应用烤房（座）</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-fw fa-fire"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3 id="used_area">65</h3>
+              <p>应用面积（亩）</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg" style="background-color:#43DDC5;color:white;">
+            <div class="inner">
+              <h3 id="fresh_sum">53<sup style="font-size: 20px">%</sup></h3>
+              <p>鲜烟总量（公斤）</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-fw fa-flag"></i>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+          <div class="small-box bg-purple">
+            <div class="inner">
+              <h3 id="dry_sum">44</h3>
+              <p>干烟总量（公斤）</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-fw fa-hospital-o"></i>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <ol class="breadcrumb" style="font-size:medium;">
+            <li><span style="color:gray;" ><span id="yuefen"></span>阶段回顾报告 </span><span  style="color:gray;font-size: 12px;" class="des"></span></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="box box-widget">
+            <div class="box-body">
+              <div class="row" style="margin-top: 30px;">
+                <div class="col-md-6">
+                  <h4 style="color:#E81527;margin-left: 20px;">烘烤进度</h4>
+                </div>
+                <div class="col-md-6"  style="padding:0 0;margin:0 0 0 -15px;">
+                  <span class="average_room" style="font-size:12px;">平均每座烤房已烤 3座</span><br>
+                  <span class="average_sum" style="font-size:12px;">平均每座烤房 3098公斤</span>
+                </div>
+              </div>
+              <div class="row" style="margin-top:30px;">
+                <div class="col-md-6">
+                <h4 style="color:#1FECC7;margin-left: 20px;">成熟度</h4>
+                </div>
+                <div class="col-md-6" style="padding:0 0;margin:0 0 0 -15px;">
+                  
+                  <span class="mature" style="font-size:12px;">适熟烟叶 23532公斤 —59%</span><br>
+                  <span class="over_mature" style="font-size:12px;">过熟烟叶 9831公斤 —24%</span><br>
+                  <span class="immature" style="font-size:12px;">欠熟烟叶 6345公斤 —17%</span>
+                </div>
+              </div>
+              <div class="row" style="margin-top:30px;">
+                <div class="col-md-6">
+                <h4 style="color:#A675E9;margin-left: 20px;">烘烤后质量</h4>
+                </div>
+                <div class="col-md-6" style="padding:0 0;margin:0 0 0 -15px;">
+                  
+                  <span class="zz" style="font-size:12px;">正组 23532公斤 —59%</span><br>
+                  <span class="q" style="font-size:12px;">青烟 9831公斤 —24%</span><br>
+                  <span class="zs" style="font-size:12px;">杂色 6345公斤 —17%</span>
+                </div>
+
+              </div>
+
+              <div class="row" style="margin-top:30px;margin-bottom:30px;">
+                <div class="col-md-6">
+                <h4 style="color:#222d32 ;margin-left: 20px;">烤房状态</h4>
+                </div>
+                <div class="col-md-6" style="padding:0 0;margin:0 0 0 -15px;">
+                  
+                  <span class="using_room" style="font-size:12px;">正在烘烤房数 ０</span><br>
+                  <span class="over_room" style="font-size:12px;">已烘烤结束烤房数 ０</span><br>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="box box-widget">
+            <div class="box-body">
+              <div id="container" style="min-width:100%;height:100%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- <div class="row">
+        <div class="col-md-12">
+          <div class="box box-widget">
+            <div class="box-body" style="padding:0">
+              <div class="col-md-3" style="border-right:1px dashed #E9E9E9;padding:0;">
+                <span style="float:left;display:block;background:#EA9C39;width:50px;height:30px;margin-left:0;margin:15px 0 15px 0;color:white;"><i style="font-weight:bold;color:white;line-height:30px;" class="fa fa-fw fa-long-arrow-right"></i>0%</span>
+                <div style="float:left;height:30px;line-height:30px;margin:15px 0 15px 0;">
+                  <span class="this_m_get" style="margin:0 0 0 15px;font-size:16px;width:120px;height:15px;display:block;line-height:15px;">35210.43</span>
+                  <span style="margin:0 0 0 15px;font-size:10px;width:120px;height:15px;display:block;line-height:15px;color:gray;">本月采收(公斤)</span>
+                </div>
+              </div>
+              <div class="col-md-3" style="border-right:1px dashed #E9E9E9;padding:0;">
+                <span style="float:left;display:block;background:#EA9C39;width:50px;height:30px;margin-left:0;margin:15px 0 15px 0;color:white;"><i style="font-weight:bold;color:white;line-height:30px;" class="fa fa-fw fa-long-arrow-right"></i>0%</span>
+                <div style="float:left;height:30px;line-height:30px;margin:15px 0 15px 0;">
+                  <span class="this_m_baking_sum" style="margin:0 0 0 15px;font-size:16px;width:120px;height:15px;display:block;line-height:15px;">35210.43</span>
+                  <span style="margin:0 0 0 15px;font-size:10px;width:120px;height:15px;display:block;line-height:15px;color:gray;">本月烘烤(公斤)</span>
+                </div>
+              </div>
+              <div class="col-md-3" style="border-right:1px dashed #E9E9E9;padding:0;">
+                <span style="float:left;display:block;background:#EA9C39;width:50px;height:30px;margin-left:0;margin:15px 0 15px 0;color:white;"><i style="font-weight:bold;color:white;line-height:30px;" class="fa fa-fw fa-long-arrow-right"></i>0%</span>
+                <div style="float:left;height:30px;line-height:30px;margin:15px 0 15px 0;">
+                  <span class="this_m_bake_r" style="margin:0 0 0 15px;font-size:16px;width:120px;height:15px;display:block;line-height:15px;">35210.43</span>
+                  <span style="margin:0 0 0 15px;font-size:10px;width:120px;height:15px;display:block;line-height:15px;color:gray;">本月烘烤房数(房)</span>
+                </div>
+              </div>
+              <div class="col-md-3" style="border-right:1px dashed #E9E9E9;padding:0;">
+                <span style="float:left;display:block;background:#EA9C39;width:50px;height:30px;margin-left:0;margin:15px 0 15px 0;color:white;"><i style="font-weight:bold;color:white;line-height:30px;" class="fa fa-fw fa-long-arrow-right"></i>0%</span>
+                <div style="float:left;height:30px;line-height:30px;margin:15px 0 15px 0;">
+                  <span class="this_used_area" style="margin:0 0 0 15px;font-size:16px;width:120px;height:15px;display:block;line-height:15px;">35210.43</span>
+                  <span style="margin:0 0 0 15px;font-size:10px;width:120px;height:15px;display:block;line-height:15px;color:gray;">本月应用面积(亩)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ -->
+  </section>
+<% end %>

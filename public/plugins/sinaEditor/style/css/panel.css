@@ -1,0 +1,250 @@
+.CP_w {
+    color: #333333;
+	margin: 0;
+    padding: 0;
+	font-size:12px;
+}
+.CP_w  th,td {margin: 0;padding: 0;}
+.CP_w ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, label, dl, dt, dd, fieldset, img {
+    border: 0 none;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.CP_w textarea, .CP_w input, .CP_w option {
+    color: #666666;
+}
+.CP_w a, .CP_w a:link, .CP_w a:visited, .CP_w a:hover {
+    color: #336699;
+}
+.CP_w .SG_txta {
+    color: #336699;
+}
+.CP_w .SG_txtb {
+    color: #666666;
+}
+.CP_w .SG_txtc {
+    color: #999999;
+}
+.CP_w .SG_clewtxta {
+    color: #CC0000;
+}
+.CP_w .SG_clewtxtb {
+    color: #FF6600;
+}
+.CP_w .SG_linka a:link, .CP_w .SG_linka a:visited, .CP_w .SG_linka a:hover, .CP_w a.SG_linka:link, .CP_w a.SG_linka:visited, .CP_w a.SG_linka:hover {
+    color: #333333;
+}
+.CP_w .SG_linkb a:link, .CP_w .SG_linkb a:visited, .CP_w .SG_linkb a:hover, .CP_w a.SG_linkb:link, .CP_w a.SG_linkb:visited, .CP_w a.SG_linkb:hover {
+    color: #999999;
+}
+.CP_w .SG_j_line {
+    background: url("../imgs/SG_line.gif") repeat-x scroll 0 0 transparent;
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+}
+.CP_w .SG_j_linedot {
+    background: url("../imgs/SG_linedot.gif") repeat-x scroll 0 0 transparent;
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+}
+.CP_w .SG_j_line1 {
+    background-image: url("../imgs/SG_line.gif");
+    background-repeat: repeat-x;
+}
+.CP_w .SG_j_linedot1 {
+    background-image: url("../imgs/SG_linedot.gif");
+    background-repeat: repeat-x;
+}
+.CP_w .SG_dot {
+    background-image: url("../imgs/SG_dot.gif");
+    background-repeat: no-repeat;
+}
+.CP_w a.SG_aBtn_dis, .CP_w a.SG_aBtn_dis cite {
+    background-image: url("../imgs/sg_btn_dis.png");
+}
+.CP_w {
+    border: 0 none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #333333;
+    width: 150px;
+}
+.CP_w a:link, .CP_w a:visited {
+    color: #2E3092;
+}
+.CP_w a:hover {
+    color: #CC0000;
+}
+.CP_w a.SG_aBtn_dis:link, .CP_w a.SG_aBtn_dis:link cite, .CP_w a.SG_aBtn_dis:visited, .CP_w a.SG_aBtn_dis:visited cite, .CP_w a.SG_aBtn_dis:hover, .CP_w a.SG_aBtn_dis:hover cite {
+    color: #B9B8B8;
+}
+.CP_w thead .tLeft, .CP_w thead .tMid, .CP_w thead .tRight, .CP_w tfoot .tLeft, .CP_w tfoot .tMid, .CP_w tfoot .tRight, .CP_w_shut {
+    background-image: url("../imgs/layerbg1.png");
+}
+.CP_w tbody .tLeft, .CP_w tbody .tRight {
+    background-image: url("../imgs/layerbg2.png");
+}
+.CP_w thead .tLeft {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 26px;
+    width: 4px;
+}
+.CP_w thead .tMid {
+    background-position: 0 -45px;
+    background-repeat: repeat-x;
+}
+.CP_w thead .tRight {
+    background-position: -15px 0;
+    background-repeat: no-repeat;
+    height: 26px;
+    width: 7px;
+}
+.CP_w tfoot .tLeft {
+    background-position: 0 -30px;
+    background-repeat: no-repeat;
+    height: 4px;
+    width: 4px;
+}
+.CP_w tfoot .tMid {
+    background-position: 0 -75px;
+    background-repeat: repeat-x;
+    height: 4px;
+}
+.CP_w tfoot .tRight {
+    background-position: -15px -30px;
+    background-repeat: no-repeat;
+    height: 4px;
+    width: 7px;
+}
+.CP_w tbody .tLeft {
+    background-position: 0 0;
+    background-repeat: repeat-y;
+    width: 4px;
+}
+.CP_w tbody .tMid {
+    background: none repeat scroll 0 0 #FFFFFF;
+}
+.CP_w tbody .tRight {
+    background-position: right 0;
+    background-repeat: repeat-y;
+}
+.CP_w thead .tLeft span, .CP_w thead .tRight span, .CP_w tfoot .tLeft span, .CP_w tfoot .tMid span, .CP_w tfoot .tRight span, .CP_w tbody .tLeft span, .CP_w tbody .tRight span {
+    display: block;
+    overflow: hidden;
+}
+.CP_w thead .tLeft span {
+    height: 26px;
+    width: 4px;
+}
+.CP_w thead .tRight span {
+    height: 26px;
+    width: 7px;
+}
+.CP_w tfoot .tLeft span {
+    height: 4px;
+    width: 4px;
+}
+.CP_w tfoot .tMid span {
+    height: 4px;
+}
+.CP_w tfoot .tRight span {
+    height: 4px;
+    width: 7px;
+}
+.CP_w tbody .tLeft span {
+    width: 4px;
+}
+.CP_w tbody .tRight span {
+    width: 7px;
+}
+.CP_w thead th {
+    text-align: left;
+}
+.CP_w thead .bLyTop {
+    font-family: "宋体";
+}
+.CP_w thead .tMid {
+    padding: 0 5px 0 8px;
+}
+.CP_w thead .tMid strong {
+    color: #666666;
+    float: left;
+}
+.CP_w thead .tMid cite {
+    float: right;
+    font-weight: 400;
+}
+.CP_w thead .tMid cite a {
+    color: #444499;
+    float: left;
+    margin-left: 8px;
+}
+.CP_w thead .tMid cite a:hover {
+    color: #CC0000;
+}
+.CP_w_shut:link, .CP_w_shut:visited {
+    background-position: 0 -90px;
+    background-repeat: no-repeat;
+    display: block;
+    float: right;
+    height: 15px;
+    overflow: hidden;
+    text-indent: -1000em;
+    width: 15px;
+}
+.CP_w_shut:hover {
+    background-position: 0 -105px;
+}
+.CP_w a.SG_aBtnB, a.SG_aBtnB cite {
+    background-image: url("../imgs/sg_btnb.png");
+}
+
+.CP_w a.SG_aBtn:link, x:-moz-any-link, x:default {
+    display: inline-block;
+    padding: 0 0 0 3px;
+}
+
+.CP_w a.SG_aBtn, a.SG_aBtn:link, a.SG_aBtn:visited {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    font-size: 12px !important;
+    margin-right: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.CP_w a.SG_aBtn, .CP_w a.SG_aBtn:link, .CP_w a.SG_aBtn:visited, .CP_w a.SG_aBtn:hover {
+    text-decoration: none;
+}
+
+.CP_w  .linkItemContent .row3 a {
+    margin: 0 3px;
+}
+
+.CP_w  a.SG_aBtn, a.SG_aBtn:link, a.SG_aBtn:visited {
+    color: #333333;
+}
+.CP_w a.SG_aBtnB, a.SG_aBtnB cite {
+    background-image: url("../imgs/sg_btnb.png");
+    color: #333399;
+}
+.CP_w a.SG_aBtn cite {
+    display: inline-block;
+    padding: 0 10px 0 8px;
+}
+
+.CP_w a.SG_aBtn cite {
+    background-position: right -28px;
+    background-repeat: no-repeat;
+    font-size: 12px !important;
+    height: 23px;
+    line-height: 23px;
+    min-width: 48px;
+    overflow-x: visible;
+    text-align: center;
+    white-space: nowrap;
+}

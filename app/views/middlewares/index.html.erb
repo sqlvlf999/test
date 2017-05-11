@@ -1,0 +1,53 @@
+<section class="content" style="margin-top:-25px;" >
+  <div class="row row1" style="margin-top:150px;">
+    <div class="col-md-12">
+      <div class="box box-widget">
+        <div class="box-body line">
+          <div class="row">
+          	 <table id="middlewares" class="table">
+              	<tr>
+              		<th>中间件ID</th>
+              		<th>工厂名称</th>
+              		<th>最近更新时间</th>
+              	</tr>
+              </table>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+        $.get('http://120.25.101.68:8081/middlewares', function(data){
+      if(data.middlewares.length > 0){
+        var middlewares = data.middlewares;
+        var stations = <%= @stations.to_json.html_safe %>;
+        console.log(stations)
+        var trs = ''
+        $('.data_row').remove();
+        for(var i=0; i < middlewares.length; i++){
+          var tr = '<tr class="data_row">';
+          tr += '<td>' + middlewares[i].address + '</td>';
+          tr += '<td>' + findStation(middlewares[i].address, stations) + '</td>';
+          tr += '<td>' + middlewares[i].updatedAt + '</td>';
+          tr += '</tr>';
+          trs += tr;
+        }
+        $('#middlewares').append(trs);
+      }else{
+        alert('can not find result');
+      }
+    })
+  
+    function findStation(mid, stations){
+      for(var station of stations){
+        if(station.code == mid){
+          return station.title;
+        }
+      }
+    }
+  </script>>
+
+  
+<% end %>

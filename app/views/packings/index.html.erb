@@ -1,0 +1,103 @@
+<% content_for :header do %>
+<p class="code" style="display:none"><%=session[:code]%></p>
+  <section class="content-header">
+    <div class="row">
+      <div class="col-xs-12">
+        <ol class="breadcrumb" style="font-size:medium;">
+          <li><a href="/dashboard"><i class="fa fa-dashboard"></i> 首页 </a></li>
+          <li class="active">市级装烟管理</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+<% end %>
+
+<% content_for :content do %>
+  <section class="content" style="margin-top:-25px;" >
+    <div class="row">
+      <div class="col-md-2">
+        <div class="box box-widget">
+          <div class="box-body">
+            <div id="container" style="width:100%;height:200px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="box box-widget">
+          <div class="box-body">
+            <div id="container_room" style="width:100%;height:200px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="box box-widget">
+          <div class="box-body">
+            <div id="container2" style="width:100%;height:200px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="box box-widget">
+          <div class="box-body">
+            <div id="container3" style="width:100%;height:200px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="box box-widget">
+          <div class="box-body">
+            <div id="container4" style="width:100%;height:200px;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="box box-widget">
+          <div class="box-body">
+              <div id="container5" style="width:100%;height:200px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box box-widget">
+          <div class="box-header">
+            <h3 class="box-title">装烟统计</h3>
+          </div>
+          <div class="box-body">
+            <table class="table table-striped table-hover" id="tTrolleys">
+              <thead>
+                <tr>
+                  <th rowspan="2"></th>
+                  <th rowspan="2">装烟量</th>
+                  <th rowspan="2">杆数</th>
+                  <th colspan="2">编烟分类(杆)</th>
+                  <th colspan="2">竿／夹内均匀性统计(杆)</th>
+                  <th colspan="2">分类装烟情况</th>
+                  <th colspan="4">装烟均匀性</th>
+
+                </tr>
+                <tr>
+                  <th>同质</th>
+                  <th>混编</th>
+
+                  <th>均匀</th>
+                  <th>不均匀</th>
+
+                  <th>正确</th>
+                  <th>不正确</th>
+
+                  <th>均匀</th>
+                  <th>前密后稀</th>
+                  <th>前稀后密</th>
+
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

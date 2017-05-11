@@ -1,0 +1,82 @@
+<section class="content" style="margin-top:-25px;" >
+  <div class="row row1" style="margin-top:150px;">
+    <div class="col-md-12">
+      <div class="box box-widget">
+        <div class="box-body line">
+          <div class="row">
+      
+          <div class="col-xs-2"  style="margin-top:10px;">
+           <div class="form-group">
+            <select class="form-control" id="stations">
+              <option value="0">选择工厂</option>
+            	<% @stations.each do |station| %>
+                <option value='<%= station.id %>'><%= station.title %></option>
+              <% end %>
+            </select>
+            <div class="col-xs-2"  style="margin-top:10px;"><button class="btn btn-primary" type="button" id="ok_btn">确定</button></div>
+           </div>
+
+          </div>
+
+          <div class="row date-info" >
+           
+          </div>
+        </div>
+        <div class="row">
+        	 <table id="rooms" class="table">
+            	<tr>
+            		<th>烤房编号</th>
+            		<th>单杆重量(Kg)</th>
+            		<th>装烟量(杆)</th>
+            		<th>总重量(Kg)</th>
+            		<th>装烟日期</th>
+            	</tr>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div id="searchModal" class="modal modal-primary fade in">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+         <div class="box-body">
+            <p style="height:25px;width:100%;margin:0 auto;">正在获取数据，请稍后...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% content_for :javascript do %>
+  <script type="text/javascript">
+    $('#ok_btn').on('click', function(){
+      var station_id = $('#stations').val();
+      var url = '/stations/'+station_id+'/rooms'
+      $.get(url, function(data){
+        if(data.length > 0){
+          var trs = ''
+          $('.data_row').remove();
+          for(var i=0; i<data.length; i++){
+            var tr = '<tr class="data_row">';
+            tr += '<td>' + data[i].room_no + '</td>';
+            tr += '<td>' + data[i].average_weight + '</td>';
+            tr += '<td>' + data[i].packing_amount + '</td>';
+            tr += '<td>' + data[i].average_weight * data[i].packing_amount + '</td>';
+            tr += '<td>' + data[i].created_at + '</td>';
+            tr += '</tr>';
+            trs += tr;
+          }
+          $('#rooms').append(trs);
+        }else{
+          alert('can not find result');
+        }
+      })
+    });
+  </script>
+<% end %>
+
+

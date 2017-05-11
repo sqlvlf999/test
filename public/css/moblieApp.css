@@ -1,0 +1,39 @@
+*{
+	margin:0;
+	padding:0;
+	font-size: 18px;
+}
+.all{
+	float:left;
+}
+.left_bar {
+	float: left;
+	border-right: 1px solid #777f90;
+	background-color: #f7f7f7;
+}
+.right_bar{
+	float: left;
+	background-color: white;
+}
+.list_bar{
+	overflow-y:auto; 
+}
+.list_title h1{
+	font-size: 20px;
+	text-align: center;
+	color:#252525;
+}
+.content_title{
+	border-bottom:1px solid #858689;
+}
+.content_title h1{
+	font-size: 20px;
+	padding-top: 10px;	
+	margin:0 0 10px 0;
+}
+.contents span{
+	color:#999999;
+}
+.active{
+	background-color: #0076ed;
+}

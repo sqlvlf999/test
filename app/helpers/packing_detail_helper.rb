@@ -1,0 +1,2 @@
+module PackingDetailHelper
+end

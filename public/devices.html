@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>自控仪状态</title>
+   
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style>
+      body{
+        margin-top: 20px; 
+      }
+      table tbody .tr_select{
+        background-color: #abb9d3;
+      }
+    </style>
+  </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <table class="table" id="devices">
+        <tr>
+          <th></th>
+          <th>中间件</th>
+          <th>自控仪</th>
+          <th>最近更新时间</th>
+        </tr>
+      </table>
+    </div> 
+    
+    <script src="/js/jquery-1.11.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+      $.get('/stations', function(stations){
+        if(stations.length > 0){
+          $.get('http://120.25.101.68:8081/devices', function(data){
+            if(data){
+              var arr = [];
+              var keys = Object.keys(data.devices).sort();
+             
+              $('.data_row').remove();
+
+              var trs = '';
+              var tmp_mid = splitKey(keys[0])[0];
+              trs += '<tr class="data_row" style="background-color:black;color: white"><td colspan="5">'+ findStationByMid(stations, tmp_mid) +'</td></tr>';
+              for(var i = 0; i < keys.length; i++){
+
+                var mid_address = splitKey(keys[i]);
+                var mid = mid_address[0];
+                var address = mid_address[1];
+                var time = data.devices[keys[i]];
+
+                if(tmp_mid != mid){
+                  tmp_mid = mid;
+                  trs +='<tr style="background-color:black;color: white"><td colspan="5">'+ findStationByMid(stations, tmp_mid) +'</td></tr>';
+                }
+
+                trs += '<tr class="data_row">';
+                trs += '<td>'+ (i + 1) +'</td>';
+                trs += '<td>'+ mid +'</td>';
+                trs += '<td>'+ address +'</td>';
+                trs += '<td>'+ new Date(parseInt(time) * 1000 * 60) +'</td>';
+                trs += '</tr>';
+
+
+              }
+                $('#devices').append(trs);
+              }
+          });
+       }
+      });
+
+
+
+      function splitKey(key){
+        return key.split(':');
+      }
+
+      function findStationByMid(stations, mid){
+        for(var station of stations){
+          if(station.code == mid){
+            return station.title;
+          }
+        }
+      }
+    </script>  
+
+  </div>   
+</body>
+</html>
